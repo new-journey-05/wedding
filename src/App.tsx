@@ -7,6 +7,7 @@ import InvitationSection from './components/InvitationSection';
 import PhotoGallery from './components/PhotoGallery';
 import EventDetails from './components/EventDetails';
 import Footer from './components/Footer';
+import BackgroundImage from './components/BackgroundImage';
 
 function App() {
 	const [showSplash, setShowSplash] = useState(true);
@@ -29,7 +30,14 @@ function App() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-100">
+		<div className="min-h-screen relative overflow-hidden">
+			<BackgroundImage
+				image="DSC08132"
+				focal={{ default: '18%', md: '22%', sm: '28%', xs: '34%' }}
+				fixedOnDesktop={true}
+				overlayCenter={{ x: '50%', y: '38%' }}
+				overlayOpacities={[0.08, 0.18, 0.38, 0.54]}
+			/>
 			<AnimatePresence>{showSplash && <SplashScreen />}</AnimatePresence>
 
 			{!showSplash && (
@@ -44,7 +52,7 @@ function App() {
 						scrollToSection={scrollToSection}
 					/>
 
-					<main>
+					<main className="relative">
 						<Hero scrollToSection={scrollToSection} />
 						<InvitationSection />
 						<PhotoGallery />

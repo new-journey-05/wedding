@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Mail, Phone } from 'lucide-react';
+import { Heart, Phone } from 'lucide-react';
 
 const Footer = () => {
 	return (
@@ -34,10 +34,6 @@ const Footer = () => {
 								<div className="flex items-center justify-center space-x-2">
 									<Phone className="w-4 h-4" />
 									<span>+91 98765 43210</span>
-								</div>
-								<div className="flex items-center justify-center space-x-2">
-									<Mail className="w-4 h-4" />
-									<span>samglory2025@email.com</span>
 								</div>
 							</div>
 						</div>

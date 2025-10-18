@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { MapPin, Clock, Phone, Mail, Navigation } from 'lucide-react';
+import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
 
 const EventDetails = () => {
 	return (
-		<section id="details" className="py-20 bg-white">
+		<section id="details" className="py-20 bg-white/80 backdrop-blur-sm">
 			<div className="container mx-auto px-4">
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
@@ -56,7 +56,7 @@ const EventDetails = () => {
 									</h5>
 									<p className="text-sm text-gray-600">
 										The venue is easily accessible by metro (Miyapur Metro
-										Station) and has ample parking space for guests.
+										Station) and has parking space for guests.
 									</p>
 								</div>
 							</div>
@@ -78,12 +78,12 @@ const EventDetails = () => {
 									<span className="font-medium">6:00 PM</span>
 								</div>
 								<div className="flex justify-between">
-									<span className="text-gray-600">Photography</span>
-									<span className="font-medium">7:30 PM</span>
+									<span className="text-gray-600">Dinner</span>
+									<span className="font-medium">8:00 PM</span>
 								</div>
 								<div className="flex justify-between">
-									<span className="text-gray-600">Reception Dinner</span>
-									<span className="font-medium">8:00 PM</span>
+									<span className="text-gray-600">Reception</span>
+									<span className="font-medium">8:30 PM</span>
 								</div>
 							</div>
 						</div>
@@ -118,16 +118,6 @@ const EventDetails = () => {
 										<p className="text-sm text-gray-600">+91 98765 43211</p>
 									</div>
 								</div>
-
-								<div className="flex items-center">
-									<Mail className="w-5 h-5 text-rose-600 mr-3" />
-									<div>
-										<p className="font-medium text-gray-700">Email</p>
-										<p className="text-sm text-gray-600">
-											samglory2025@email.com
-										</p>
-									</div>
-								</div>
 							</div>
 						</div>
 
@@ -138,21 +128,24 @@ const EventDetails = () => {
 
 							<div className="space-y-3 text-sm text-gray-600">
 								<p>• Dress code: Formal/Traditional attire preferred</p>
-								<p>• The ceremony will be conducted in English and Telugu</p>
+								<p>• The ceremony will be conducted in Malayalam and English</p>
 								<p>• Parking is available at the venue</p>
 								<p>• Please arrive 30 minutes before the ceremony</p>
-								<p>• Gifts are optional, your presence is the greatest gift</p>
 							</div>
 						</div>
 
-						<motion.button
+						<motion.a
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
+							href="https://maps.app.goo.gl/gUcwBjwa4x5nN1Re9"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Open venue location in Google Maps"
 							className="w-full bg-rose-600 text-white px-6 py-4 rounded-lg elegant-font text-lg hover:bg-rose-700 transition-colors duration-200 shadow-lg flex items-center justify-center space-x-2"
 						>
 							<Navigation className="w-5 h-5" />
 							<span>Get Directions</span>
-						</motion.button>
+						</motion.a>
 					</motion.div>
 				</div>
 

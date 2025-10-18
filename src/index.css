@@ -45,3 +45,5 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #be185d;
 }
+
+/* Background positioning now handled by BackgroundImage component */

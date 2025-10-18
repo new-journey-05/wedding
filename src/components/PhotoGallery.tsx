@@ -1,51 +1,82 @@
 import { motion } from 'framer-motion';
 import { Camera, Heart } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 
 const PhotoGallery = () => {
-	// Placeholder images - these should be replaced with actual engagement photos
+	// Using your actual engagement photos
 	const galleryImages = [
 		{
 			id: 1,
-			src: '/api/placeholder/400/500',
+			src: '/images/engagement/DSC04046.JPG',
 			alt: 'Sam and Glory engagement photo 1',
 			caption: 'The proposal moment',
 		},
 		{
 			id: 2,
-			src: '/api/placeholder/500/400',
+			src: '/images/engagement/DSC04284.JPG',
 			alt: 'Sam and Glory engagement photo 2',
 			caption: 'Celebrating our love',
 		},
 		{
 			id: 3,
-			src: '/api/placeholder/400/600',
+			src: '/images/engagement/DSC04599.JPG',
 			alt: 'Sam and Glory engagement photo 3',
 			caption: 'Perfect together',
 		},
 		{
 			id: 4,
-			src: '/api/placeholder/600/400',
+			src: '/images/engagement/DSC04660.JPG',
 			alt: 'Sam and Glory engagement photo 4',
 			caption: 'Our journey begins',
 		},
 		{
 			id: 5,
-			src: '/api/placeholder/400/500',
+			src: '/images/engagement/DSC04948.JPG',
 			alt: 'Sam and Glory engagement photo 5',
 			caption: 'Endless happiness',
 		},
 		{
 			id: 6,
-			src: '/api/placeholder/500/600',
+			src: '/images/engagement/DSC05044.JPG',
 			alt: 'Sam and Glory engagement photo 6',
 			caption: 'Forever and always',
+		},
+		{
+			id: 7,
+			src: '/images/engagement/DSC05061.JPG',
+			alt: 'Sam and Glory engagement photo 7',
+			caption: 'Beautiful memories',
+		},
+		{
+			id: 8,
+			src: '/images/engagement/DSC08132.JPG',
+			alt: 'Sam and Glory engagement photo 8',
+			caption: 'Love in bloom',
+		},
+		{
+			id: 9,
+			src: '/images/engagement/DSC08874.JPG',
+			alt: 'Sam and Glory engagement photo 9',
+			caption: 'Hearts united',
+		},
+		{
+			id: 10,
+			src: '/images/engagement/DSC08972.JPG',
+			alt: 'Sam and Glory engagement photo 10',
+			caption: 'Dreams come true',
+		},
+		{
+			id: 11,
+			src: '/images/engagement/DSC09083.JPG',
+			alt: 'Sam and Glory engagement photo 11',
+			caption: 'Blessed together',
 		},
 	];
 
 	return (
 		<section
 			id="gallery"
-			className="py-20 bg-gradient-to-br from-rose-50 to-pink-100"
+			className="py-20 bg-gradient-to-br from-rose-50/60 to-pink-100/60 backdrop-blur-sm"
 		>
 			<div className="container mx-auto px-4">
 				<motion.div
@@ -66,7 +97,7 @@ const PhotoGallery = () => {
 					</motion.div>
 
 					<h2 className="elegant-font text-4xl md:text-5xl text-gray-800 mb-4">
-						Our Love Story
+						Our Story
 					</h2>
 					<p className="romantic-font text-xl text-rose-600 mb-8">
 						Capturing moments of our journey together
@@ -86,17 +117,12 @@ const PhotoGallery = () => {
 							className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
 						>
 							<div className="aspect-w-4 aspect-h-5">
-								<div className="w-full h-80 bg-gradient-to-br from-rose-200 to-pink-300 flex items-center justify-center">
-									<div className="text-center text-rose-600">
-										<Camera className="w-12 h-12 mx-auto mb-2" />
-										<p className="elegant-font text-sm">
-											Engagement Photo {image.id}
-										</p>
-										<p className="text-xs text-rose-500 mt-1">
-											{image.caption}
-										</p>
-									</div>
-								</div>
+								<OptimizedImage
+									src={image.src}
+									alt={image.alt}
+									className="w-full h-80 object-cover"
+									loading={index < 2 ? 'eager' : 'lazy'}
+								/>
 							</div>
 
 							<div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
@@ -136,18 +162,6 @@ const PhotoGallery = () => {
 							</p>
 						</div>
 					</div>
-				</motion.div>
-
-				<motion.div
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ delay: 0.8, duration: 0.6 }}
-					viewport={{ once: true }}
-					className="mt-12 text-center"
-				>
-					<p className="text-sm text-gray-500 italic">
-						* Placeholder images shown. Replace with actual engagement photos.
-					</p>
 				</motion.div>
 			</div>
 		</section>

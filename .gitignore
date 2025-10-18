@@ -168,6 +168,7 @@ firebase-debug.*.log
 # Uncomment if you have actual photos you don't want to commit
 # /public/photos/
 # /src/assets/images/real-photos/
+*.jpg
 
 # Backup files
 *.bak

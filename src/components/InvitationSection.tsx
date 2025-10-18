@@ -3,7 +3,7 @@ import { Heart, Calendar, MapPin } from 'lucide-react';
 
 const InvitationSection = () => {
 	return (
-		<section id="invitation" className="py-20 bg-white">
+		<section id="invitation" className="py-20 bg-white/80 backdrop-blur-sm">
 			<div className="container mx-auto px-4">
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}

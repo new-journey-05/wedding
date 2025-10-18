@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, ChevronDown } from 'lucide-react';
+import CountdownDate from './CountdownDate';
 
 interface HeroProps {
 	scrollToSection: (sectionId: string) => void;
@@ -12,7 +13,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 			className="min-h-screen flex items-center justify-center relative overflow-hidden"
 		>
 			{/* Background Pattern */}
-			<div className="absolute inset-0 opacity-10">
+			<div className="absolute inset-0 opacity-5">
 				<div
 					className="absolute inset-0"
 					style={{
@@ -26,7 +27,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 1, delay: 0.2 }}
-					className="max-w-4xl mx-auto"
+					className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-8 shadow-2xl"
 				>
 					<motion.div
 						initial={{ scale: 0 }}
@@ -71,12 +72,7 @@ const Hero = ({ scrollToSection }: HeroProps) => {
 						transition={{ delay: 1.5, duration: 0.5 }}
 						className="mb-12"
 					>
-						<div className="inline-block bg-white/70 backdrop-blur-sm rounded-lg px-8 py-6 shadow-lg">
-							<p className="elegant-font text-2xl md:text-3xl text-rose-700 font-semibold mb-2">
-								November 5th, 2025
-							</p>
-							<p className="text-lg text-gray-600">6:00 PM</p>
-						</div>
+						<CountdownDate className="inline-block bg-white/70 backdrop-blur-sm rounded-lg px-8 py-6 shadow-lg" />
 					</motion.div>
 
 					<motion.button
