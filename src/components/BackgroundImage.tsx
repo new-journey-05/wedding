@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { getAssetPath } from '../utils/assetPath';
 
 // Contract:
 // Props:
@@ -35,8 +36,8 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
 }) => {
 	// We'll utilize CSS variables to allow responsive overrides in global stylesheet if desired.
 	// For now we implement inline style with media queries via a small style tag.
-	const webpSrc = `/images/backgrounds/${image}.webp`;
-	const jpgSrc = `/images/backgrounds/${image}.jpg`;
+	const webpSrc = getAssetPath(`images/backgrounds/${image}.webp`);
+	const jpgSrc = getAssetPath(`images/backgrounds/${image}.jpg`);
 
 	return (
 		<div aria-hidden="true" className="absolute inset-0 -z-10">
@@ -64,7 +65,7 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
         `}
 			</style>
 			<motion.div
-				className="bg-layer w-full h-full"
+				className="bg-layer w-full h-full bg-gradient-to-br from-rose-200 via-pink-100 to-rose-300"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1.2 }}

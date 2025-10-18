@@ -1,73 +1,74 @@
 import { motion } from 'framer-motion';
 import { Camera, Heart } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
+import { getAssetPath } from '../utils/assetPath';
 
 const PhotoGallery = () => {
 	// Using your actual engagement photos
 	const galleryImages = [
 		{
 			id: 1,
-			src: '/images/engagement/DSC04046.JPG',
+			src: getAssetPath('images/engagement/DSC04046.JPG'),
 			alt: 'Sam and Glory engagement photo 1',
 			caption: 'The proposal moment',
 		},
 		{
 			id: 2,
-			src: '/images/engagement/DSC04284.JPG',
+			src: getAssetPath('images/engagement/DSC04284.JPG'),
 			alt: 'Sam and Glory engagement photo 2',
 			caption: 'Celebrating our love',
 		},
 		{
 			id: 3,
-			src: '/images/engagement/DSC04599.JPG',
+			src: getAssetPath('images/engagement/DSC04599.JPG'),
 			alt: 'Sam and Glory engagement photo 3',
 			caption: 'Perfect together',
 		},
 		{
 			id: 4,
-			src: '/images/engagement/DSC04660.JPG',
+			src: getAssetPath('images/engagement/DSC04660.JPG'),
 			alt: 'Sam and Glory engagement photo 4',
 			caption: 'Our journey begins',
 		},
 		{
 			id: 5,
-			src: '/images/engagement/DSC04948.JPG',
+			src: getAssetPath('images/engagement/DSC04948.JPG'),
 			alt: 'Sam and Glory engagement photo 5',
 			caption: 'Endless happiness',
 		},
 		{
 			id: 6,
-			src: '/images/engagement/DSC05044.JPG',
+			src: getAssetPath('images/engagement/DSC05044.JPG'),
 			alt: 'Sam and Glory engagement photo 6',
 			caption: 'Forever and always',
 		},
 		{
 			id: 7,
-			src: '/images/engagement/DSC05061.JPG',
+			src: getAssetPath('images/engagement/DSC05061.JPG'),
 			alt: 'Sam and Glory engagement photo 7',
 			caption: 'Beautiful memories',
 		},
 		{
 			id: 8,
-			src: '/images/engagement/DSC08132.JPG',
+			src: getAssetPath('images/engagement/DSC08132.JPG'),
 			alt: 'Sam and Glory engagement photo 8',
 			caption: 'Love in bloom',
 		},
 		{
 			id: 9,
-			src: '/images/engagement/DSC08874.JPG',
+			src: getAssetPath('images/engagement/DSC08874.JPG'),
 			alt: 'Sam and Glory engagement photo 9',
 			caption: 'Hearts united',
 		},
 		{
 			id: 10,
-			src: '/images/engagement/DSC08972.JPG',
+			src: getAssetPath('images/engagement/DSC08972.JPG'),
 			alt: 'Sam and Glory engagement photo 10',
 			caption: 'Dreams come true',
 		},
 		{
 			id: 11,
-			src: '/images/engagement/DSC09083.JPG',
+			src: getAssetPath('images/engagement/DSC09083.JPG'),
 			alt: 'Sam and Glory engagement photo 11',
 			caption: 'Blessed together',
 		},

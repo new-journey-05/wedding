@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "build:github": "npm run build && cp public/404.html dist/404.html",
     "process-images": "node scripts/simple-process-images.js",
     "convert-webp": "./scripts/convert-to-webp.sh",
     "optimize-images": "npm run process-images && npm run convert-webp"
