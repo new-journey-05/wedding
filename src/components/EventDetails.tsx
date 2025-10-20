@@ -107,7 +107,7 @@ const EventDetails = () => {
 									<Phone className="w-5 h-5 text-rose-600 mr-3" />
 									<div>
 										<p className="font-medium text-gray-700">Sam's Family</p>
-										<p className="text-sm text-gray-600">+91 98765 43210</p>
+										<p className="text-sm text-gray-600">+91 99999 99999</p>
 									</div>
 								</div>
 
@@ -115,7 +115,7 @@ const EventDetails = () => {
 									<Phone className="w-5 h-5 text-rose-600 mr-3" />
 									<div>
 										<p className="font-medium text-gray-700">Glory's Family</p>
-										<p className="text-sm text-gray-600">+91 98765 43211</p>
+										<p className="text-sm text-gray-600">+91 99999 99999</p>
 									</div>
 								</div>
 							</div>

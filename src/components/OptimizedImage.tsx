@@ -5,6 +5,7 @@ interface OptimizedImageProps {
 	alt: string;
 	className?: string;
 	loading?: 'lazy' | 'eager';
+	style?: React.CSSProperties;
 }
 
 const OptimizedImage = ({
@@ -12,6 +13,7 @@ const OptimizedImage = ({
 	alt,
 	className = '',
 	loading = 'lazy',
+	style,
 }: OptimizedImageProps) => {
 	const [imageError, setImageError] = useState(false);
 	const [imageLoaded, setImageLoaded] = useState(false);
@@ -60,7 +62,7 @@ const OptimizedImage = ({
 	}
 
 	return (
-		<picture className={`relative ${className}`}>
+		<picture className={`relative ${className}`} style={style}>
 			{/* WebP version for modern browsers */}
 			<source srcSet={generateWebPPath(src)} type="image/webp" />
 

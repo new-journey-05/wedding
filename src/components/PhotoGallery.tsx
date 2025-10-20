@@ -3,76 +3,38 @@ import { Camera, Heart } from 'lucide-react';
 import OptimizedImage from './OptimizedImage';
 import { getAssetPath } from '../utils/assetPath';
 
+// Helper: build original JPG path from base name and feed into OptimizedImage which will derive .webp
+const buildImagePath = (base: string) =>
+	getAssetPath(`images/engagement/${base}.JPG`);
+
 const PhotoGallery = () => {
 	// Using your actual engagement photos
+	// Optional orientationDegrees allows manual correction if original EXIF orientation lost.
+	// Positive values rotate clockwise.
 	const galleryImages = [
 		{
-			id: 1,
-			src: getAssetPath('images/engagement/DSC04046.JPG'),
-			alt: 'Sam and Glory engagement photo 1',
+			base: 'DSC04046',
 			caption: 'The proposal moment',
-		},
-		{
-			id: 2,
-			src: getAssetPath('images/engagement/DSC04284.JPG'),
-			alt: 'Sam and Glory engagement photo 2',
-			caption: 'Celebrating our love',
-		},
-		{
-			id: 3,
-			src: getAssetPath('images/engagement/DSC04599.JPG'),
-			alt: 'Sam and Glory engagement photo 3',
-			caption: 'Perfect together',
-		},
-		{
-			id: 4,
-			src: getAssetPath('images/engagement/DSC04660.JPG'),
-			alt: 'Sam and Glory engagement photo 4',
-			caption: 'Our journey begins',
-		},
-		{
-			id: 5,
-			src: getAssetPath('images/engagement/DSC04948.JPG'),
-			alt: 'Sam and Glory engagement photo 5',
-			caption: 'Endless happiness',
-		},
-		{
-			id: 6,
-			src: getAssetPath('images/engagement/DSC05044.JPG'),
-			alt: 'Sam and Glory engagement photo 6',
-			caption: 'Forever and always',
-		},
-		{
-			id: 7,
-			src: getAssetPath('images/engagement/DSC05061.JPG'),
-			alt: 'Sam and Glory engagement photo 7',
-			caption: 'Beautiful memories',
-		},
-		{
-			id: 8,
-			src: getAssetPath('images/engagement/DSC08132.JPG'),
-			alt: 'Sam and Glory engagement photo 8',
-			caption: 'Love in bloom',
-		},
-		{
-			id: 9,
-			src: getAssetPath('images/engagement/DSC08874.JPG'),
-			alt: 'Sam and Glory engagement photo 9',
-			caption: 'Hearts united',
-		},
-		{
-			id: 10,
-			src: getAssetPath('images/engagement/DSC08972.JPG'),
-			alt: 'Sam and Glory engagement photo 10',
-			caption: 'Dreams come true',
-		},
-		{
-			id: 11,
-			src: getAssetPath('images/engagement/DSC09083.JPG'),
-			alt: 'Sam and Glory engagement photo 11',
-			caption: 'Blessed together',
-		},
-	];
+			orientationDegrees: 270,
+		}, // appears rotated; rotate 270deg (or -90) to correct
+		{ base: 'DSC04284', caption: 'Celebrating our love' },
+		{ base: 'DSC04599', caption: 'Perfect together' },
+		{ base: 'DSC04660', caption: 'Our journey begins' },
+		{ base: 'DSC04948', caption: 'Endless happiness' },
+		{ base: 'DSC05044', caption: 'Forever and always' },
+		{ base: 'DSC05061', caption: 'Beautiful memories' },
+		{ base: 'DSC08132', caption: 'Love in bloom' },
+		{ base: 'DSC08874', caption: 'Hearts united' },
+		{ base: 'DSC08972', caption: 'Dreams come true' },
+		{ base: 'DSC09083', caption: 'Blessed together' },
+		{ base: 'DSC08620', caption: 'Cherished moments' },
+	].map((img, i) => ({
+		id: i + 1,
+		src: buildImagePath(img.base),
+		alt: `Sam and Glory engagement photo ${img.base}`,
+		caption: img.caption,
+		orientationDegrees: img.orientationDegrees || 0,
+	}));
 
 	return (
 		<section
@@ -123,6 +85,11 @@ const PhotoGallery = () => {
 									alt={image.alt}
 									className="w-full h-80 object-cover"
 									loading={index < 2 ? 'eager' : 'lazy'}
+									style={
+										image.orientationDegrees
+											? { transform: `rotate(${image.orientationDegrees}deg)` }
+											: undefined
+									}
 								/>
 							</div>
 
